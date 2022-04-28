@@ -9,11 +9,6 @@ class String
     processed_content == processed_content.reverse
   end
 
-  # Return the letter in a string
-  def letters
-    self.chars.select { |c| c.match(/[a-z]/i) }.join
-  end
-
   private
   
     # Returns content for palindorme testing.
