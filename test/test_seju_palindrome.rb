@@ -8,6 +8,10 @@ class TestSejuPalindrome < Minitest::Test
     refute "apple".palindrome?
   end
 
+  def test_for_non_space
+    refute " ".palindrome?
+  end
+
   def test_plain_palindrome
     assert "racecar".palindrome?
   end
@@ -18,5 +22,10 @@ class TestSejuPalindrome < Minitest::Test
 
   def test_palindrome_with_punctuation
     assert "Madam, I'm Adam".palindrome?
+  end
+
+  def test_processed_content
+    assert_equal "A man, a plan, a canal - Panama".send(:processed_content),
+                 "amanaplanacanalpanama"
   end
 end

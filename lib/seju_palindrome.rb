@@ -6,14 +6,18 @@ class String
 
   # Returns true for a palindorme, false otherwise.
   def palindrome?
-    processed_content == processed_content.reverse
+    if processed_content.empty?
+      false
+    else
+      processed_content == processed_content.reverse
+    end
   end
 
   private
   
     # Returns content for palindorme testing.
     def processed_content
-      self.scan(/[a-z]/i).join.downcase
-
+      letterRegEx = /[a-z]/i
+      self.scan(letterRegEx).join.downcase
     end
 end
